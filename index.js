@@ -1,4 +1,9 @@
-const { MongoClient, ServerApiVersion, MongoRuntimeError } = require("mongodb");
+const {
+  MongoClient,
+  ServerApiVersion,
+  MongoRuntimeError,
+  ObjectId,
+} = require("mongodb");
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -19,10 +24,23 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    const userCollection = client.db("").collection("");
+    const servicerCollection = client.db("nodeMongoCrud").collection("users");
+    app.get("/services", async (req, res) => {
+      const query = {};
+      const cursor = servicerCollection.find(query);
+      const services = await cursor.toArray();
+      res.send(services);
+    });
+    app.get("/services/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const service = await servicerCollection.findOne(query);
+      res.send(service);
+    });
   } finally {
   }
 }
+run().catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
   res.send("hello");
