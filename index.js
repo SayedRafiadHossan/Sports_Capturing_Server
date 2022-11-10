@@ -25,6 +25,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     const servicerCollection = client.db("nodeMongoCrud").collection("users");
+    const serviceCollection = client.db("nodeMongoCrud").collection("review");
     app.get("/services", async (req, res) => {
       const query = {};
       const cursor = servicerCollection.find(query);
@@ -40,7 +41,7 @@ async function run() {
 
     app.post("/orders", async (req, res) => {
       const order = req.body;
-      const result = await orderCollection.insertOne(order);
+      const result = await serviceCollection.insertOne(order);
       res.send(result);
     });
   } finally {
