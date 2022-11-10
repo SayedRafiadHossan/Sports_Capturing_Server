@@ -44,6 +44,20 @@ async function run() {
       const result = await serviceCollection.insertOne(order);
       res.send(result);
     });
+
+    app.delete("/orders/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const result = await serviceCollection.deleteOne(query);
+      res.send(result);
+    });
+
+    app.get("/orders", async (req, res) => {
+      const query = {};
+      const cursor = serviceCollection.find(query);
+      const reviews = await cursor.toArray();
+      res.send(reviews);
+    });
   } finally {
   }
 }
