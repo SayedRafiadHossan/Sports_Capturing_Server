@@ -39,6 +39,12 @@ async function run() {
       res.send(service);
     });
 
+    app.post("/services", async (req, res) => {
+      const order = req.body;
+      const result = await servicerCollection.insertOne(order);
+      res.send(result);
+    });
+
     app.post("/orders", async (req, res) => {
       const order = req.body;
       const result = await serviceCollection.insertOne(order);
@@ -50,6 +56,14 @@ async function run() {
       const query = { _id: ObjectId(id) };
       const result = await serviceCollection.deleteOne(query);
       res.send(result);
+    });
+
+    app.put("/reviews/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const newReview = { $set: req.body };
+      const result = await serviceCollection.updateOne(query, newReview);
+      res.json(result);
     });
 
     app.get("/orders", async (req, res) => {
@@ -64,7 +78,7 @@ async function run() {
 run().catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
-  res.send("hello");
+  res.send("Welcome to Server");
 });
 
 app.listen(port, () => {
