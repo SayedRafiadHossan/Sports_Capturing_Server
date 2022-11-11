@@ -79,7 +79,7 @@ async function run() {
       res.send(result);
     });
 
-    app.put("/reviews/:id", verifyToken, async (req, res) => {
+    app.put("/orders/:id", verifyToken, async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
       const newReview = { $set: req.body };
