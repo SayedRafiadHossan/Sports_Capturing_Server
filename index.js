@@ -4,12 +4,19 @@ const {
   MongoRuntimeError,
   ObjectId,
 } = require("mongodb");
+const admin = require("firebase-admin");
 const express = require("express");
 const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5000;
 
 require("dotenv").config();
+
+const serviceAccount = require("./sports-capturing-firebase-admin.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
 
 // middlewares
 
@@ -22,6 +29,19 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
   serverApi: ServerApiVersion.v1,
 });
+
+//  token middleware
+
+async function verifyToken(req, res, next) {
+  if (req.headers?.authorization?.startsWith("Bearer ")) {
+    const idToken = req.headers.authorization.split(" ")[1];
+    try {
+      const decodedUser = await admin.auth().verifyIdToken(idToken);
+      req.decodedEmail = decodedUser.email;
+    } catch {}
+  }
+  next();
+}
 
 async function run() {
   try {
@@ -52,14 +72,14 @@ async function run() {
       res.send(result);
     });
 
-    app.delete("/orders/:id", async (req, res) => {
+    app.delete("/orders/:id", verifyToken, async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
       const result = await serviceCollection.deleteOne(query);
       res.send(result);
     });
 
-    app.put("/reviews/:id", async (req, res) => {
+    app.put("/reviews/:id", verifyToken, async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
       const newReview = { $set: req.body };

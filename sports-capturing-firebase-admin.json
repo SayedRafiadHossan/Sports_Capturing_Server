@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sports-capturing",
+  "private_key_id": "f1a57375f767c97ec422fb3718877ee820b35c2e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC9cScKR8+6kTr3\neXV+ACLqmtErOQUi9Dh9fVuSd1Ou/0P0FMMnLwSAdgwN0GQC3FiD+8ioywBzwDcG\nCO8xOwFh+X704+xez5TeKp+/WZGYoMYlcYudrq/hi8qRNyc5iDN8GkH5BMVLU150\n8JxWkRDBxHDGxsYn+xRIojjNq0BckhReyDy4sj9dxuLq4BS1A0v+XV1J6h0PYYtw\nzryU4I6UqK/9S8JG5j1bDuqtnhU8hA5THgTtMONwNhWQz2kX4lQb17lrJdc0Pr+P\nPA9IExofaolTxJmtMg8rgH6fbO2IBA0ltU+rJpR/+9uKypYxhcE70amcZT1Ee7G/\nHE4pjGvlAgMBAAECggEAHEggQ/Ckmn3EB94iJEVw8QVb5NAGbEl5hYKJgTw/Sgjh\n5DaVS+xBB8yX0BgkVij/LfUQ5+ImlyFDFauPyhG9CxtsULMWPrFO0DwczTxZ+CdI\nbZ6d8VR6/XkZLMTHHlevF//ziXGk4rH3kA27yVCu576j94kFXEKnrJBLWqkOWsNS\nPqrYQKJ3Ml/y1VmzKqaBvuSKpoSSQ65MYGbHBBNaq7OLELJg0k1cH6SrnJezDxvy\nVvMcv+/WRLAsC5UemO7hXBDpIyIFKPyl7SVX4RW2lnYZ0lDnu94JnobL59vWVn1R\nZevoVVOUg5U0tnr+XK8ZrDNF8hrUw/xlpJtFx42xAQKBgQDu1HncrtyS9MQcaLHX\nvzapA3oB9zTQpGhEi0gCp8GZGgzJLG+YtndlU1mbpzb4lQp6YlkrEBxkd4gTLlPS\nHmQAzuxePQIuwzFPRrYkV9skqLWE9Kc06LXd6kcT6fEEz3+iPxnnTKuAr4HGjhSM\nMvTNTQkUkx9kuSppxeh64sNZvQKBgQDLD7hR7D/NxmP5PCYPogbsGemYkv1+cGbA\nIK6DN/73LaAezZPoIisQoBLKSECbHY7kCOhWv6eyIwDhoeBs87LOGFH/Lq9EhEND\nO3WrIu/1+4Djf0dp4CyBuV0lqwZRUhA/Rvci15NPfiso/EzVQPzL3bL3RssA+WPe\nPWrQezv5SQKBgQCz2T2LegKQh9HGsvB5z3yR+hQ+trIHDEeYlmo71ahsarmGJPhE\nv+NZYlLwbBNxTor9bmJHk3JOFdVa3GAyssAL+8bzkG28WTEgydcPtzlHeeR3ouTn\navbJjkrILDtbrAYpX+tZytq7pW7M3uGKUjUXBRP5cnEJoIbX8DkJkQoa4QKBgF9k\nJB+ADz0YnLBhvDON1xik16LQMntqTCqnb7O+42y0p0qxInFjU728pPcX2BnGWfDv\n6k2OPTYm0WwtgmNMXEwLCsII6VcTlxGHZjCd+gIhQxwcF606HU5XiNWAMTiUh4Ni\nUAizIsWuLJJVa7amj9spa8BUJltvzKWDTqFfsv3ZAoGAadQgtR9pQ6mmo4dmMcqq\nR5kHRTonAK9nCO50Q3z/J2zagStCJSB4u452m5T8GaTGEXNN/lmFCuOqVRJwakdJ\nfLmFwNUFAHR6GB2I7ua2/5ii4lARYy6I0ZL8fmafWJy+WVwAHAs2LVXmSDAaVQJ9\nS3qsvnDDIpXzAEW5ZmldwIU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-ld877@sports-capturing.iam.gserviceaccount.com",
+  "client_id": "108153164037478214202",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ld877%40sports-capturing.iam.gserviceaccount.com"
+}
